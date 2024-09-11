@@ -1,0 +1,33 @@
+server:
+  port: 8888
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/mylogin?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&AllowPublicKeyRetrieval=True
+
+  data:
+    redis:
+      port: 6379
+      host: localhost
+
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+
+  mvc:
+    async:
+      request-timeout: 120000 # 设置异步请求超时时间为 120000 毫秒
+
+logging:
+  level:
+    com.wal: debug
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
